@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <meta charset="utf-8" />
+    <title><ui:insert name="pageTitle">Page Title</ui:insert></title>
+    
+    <script src="#{request.contextPath}/public/javascripts/vendor/jquery.js"></script>
+    
+    <link rel="stylesheet" href="#{request.contextPath}/public/stylesheets/normalize.css" />
+    <link rel="stylesheet" href="#{request.contextPath}/public/stylesheets/app.css" />
+    
+    <!-- typekit fonts -->
+    <script type="text/javascript" src="//use.typekit.net/yxv0fwh.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <script src="#{request.contextPath}/public/javascripts/vendor/custom.modernizr.js"></script>
+
+</h:head>
+<h:body>
+    <nav class="top-bar">
+        <ul class="title-area">
+            <li class="name">
+                <h1>
+                    <a href="index.jsf">Brainshare</a>
+                </h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+            <ul class="right">
+                <li>
+                    <h:link outcome="/login" value="Login" rendered="#{!userController.loggedIn and (empty userSession.profile)}" />
+                    <h:link outcome="/pages/principal" value="#{sessionScope['usuarioLogado'].email}" rendered="#{userController.loggedIn}" />
+                </li>
+                <li><a href="#">Fórum</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Ajuda</a></li>
+            </ul>
+        </section>
+    </nav>
+
+    <ui:insert name="pageContent">Page Content</ui:insert>
+
+    <footer>
+        <div class="row">
+            <div class="footer-notes large-4 columns">
+                <span class="logo">Brainshare</span><br /> Sistema desenvolvido por Renato Mesquita, Thaisa Ramos e Thiago César <br /> <br /> 2013 © Brainshare
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="#{request.contextPath}/public/javascripts/foundation/foundation.js"></script>
+
+    <script src="#{request.contextPath}/public/javascripts/foundation/foundation.alerts.js"></script>
+
+    <script src="#{request.contextPath}/public/javascripts/foundation/foundation.clearing.js"></script>
+
+    <script src="#{request.contextPath}/public/javascripts/foundation/foundation.cookie.js"></script>
+
+    <script src="#{request.contextPath}/public/javascripts/foundation/foundation.dropdown.js"></script>
+
+    <script src="#{request.contextPath}/public/javascripts/foundation/foundation.forms.js"></script>
+
+    <script src="#{request.contextPath}/public/javascripts/foundation/foundation.joyride.js"></script>
+
+    <script src="#{request.contextPath}/public/javascripts/foundation/foundation.magellan.js"></script>
+
+    <script src="#{request.contextPath}/public/javascripts/foundation/foundation.orbit.js"></script>
+
+    <script src="#{request.contextPath}/public/javascripts/foundation/foundation.placeholder.js"></script>
+
+    <script src="#{request.contextPath}/public/javascripts/foundation/foundation.reveal.js"></script>
+
+    <script src="#{request.contextPath}/public/javascripts/foundation/foundation.section.js"></script>
+
+    <script src="#{request.contextPath}/public/javascripts/foundation/foundation.tooltips.js"></script>
+
+    <script src="#{request.contextPath}/public/javascripts/foundation/foundation.topbar.js"></script>
+
+    <script>$(document).foundation();</script>
+</h:body>
+</html>

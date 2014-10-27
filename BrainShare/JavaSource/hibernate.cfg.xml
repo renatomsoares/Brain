@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <!-- Configuração da conexão com o banco de dados -->
+  <property name="hibernate.connection.driver_class">org.gjt.mm.mysql.Driver</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost/brainshare</property>
+  <property name="hibernate.connection.password">admin</property>
+  <property name="hibernate.connection.username">root</property>  
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  
+  <!-- Apaga e recria o banco no startup sempre que mudanças forem feitas nas classes -->
+  <property name="hibernate.hbm2ddl.auto">update</property>
+
+  <!-- Habilita o gerenciamento automatico de sessão através das threads -->
+  <property name="hibernate.current_session_context_class">thread</property>
+  
+  <!-- Mapeando clases -->
+  <mapping class="br.brainshare.model.Question"/>
+  <mapping class="br.brainshare.model.Answer"/>
+  <mapping class="br.brainshare.model.User"/>
+  <mapping class="br.brainshare.model.Tag"/>
+ </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/templates/template.xhtml">
+    <ui:define name="pageTitle">Brainshare - Compartilhando Sabedoria</ui:define>
+    <ui:define name="pageContent">
+        <div class="row">
+            <aside class="large-4 push-8 columns">
+                <div class="stacked-box">
+                    <div class="row collapse">
+                        <div class="small-3 large-4 columns">
+                            <span class="prefix">Buscar</span>
+                        </div>
+                        <div class="small-9 large-8 columns">
+                            <input type="text" class="search-input"  />
+                            <h:form>
+<h:commandButton  action = "/insertQuestion.jsp" value="buscar"> </h:commandButton>    
+
+</h:form>                 
+                            
+                        </div>
+                    </div>
+								
+                    Para criar uma pergunta, basta clicar no botão abaixo: <br />
+                    <br /> <a href="insertQuestion.jsf" class="btn green">PERGUNTAR</a>
+                </div>
+            </aside>
+            <h:form id="listQuestion">
+                    <h:dataTable value="#{questionController.lista}" var="question" styleClass="large-8 pull-4 columns stacked-box question">
+            
+                
+                        <h:column>
+                            <h:commandLink action="#{question.show}"> <span class="title">#{question.title}</span></h:commandLink>
+                        
+                            <span class="author">por <a href="#">#{question.user.username}</a> às #{question.dateRegister}</span>
+                        
+                            <div class="tags">
+                                <a href="#" class="tag">#{question.tags.name}</a> 
+                            </div>
+                       
+                            <span class="question-note">10 Votos</span> <span class="question-note">3 Respostas</span>
+                        </h:column>
+                   
+             </h:dataTable>
+                </h:form>
+        </div>
+    </ui:define>
+</ui:composition>
+
+</html>

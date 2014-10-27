@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<!-- 
+        Replace path to template, title, header and body
+        with actual data.
+     -->
+<ui:composition template="/templates/template.xhtml">
+    <ui:define name="pageTitle">Login - BrainShare</ui:define>
+    <ui:define name="pageContent">
+        <f:view>
+            <ui:param name="originalURL" value="#{request.requestURI}?#{request.queryString}" />
+            <f:metadata>
+                <f:event rendered="#{empty userSession.profile}" type="preRenderView" listener="#{userSession.setOriginalURL(originalURL)}" />
+            </f:metadata>
+        </f:view>
+        
+        
+        
+        <div class="row">
+            
+            <div class="large-4 large-offset-4 columns sign-in">
+                <div class="stacked-box">
+                    <div class="sign-in__title">
+                        Login
+                    </div>
+                    <f:loadBundle basename="br.brainshare.model.Messages" var="msg" />
+                    
+                    <h:form id="formLogin">
+                        <h:messages id="msgErro" style="color:red; list-style-type: none;" />
+                    
+                        <h:panelGroup rendered="#{empty userSession.profile}" id="socialButtons" >
+                            <h:commandLink id="facebook" action="#{userSession.socialConnect}" style="float:left; margin-top: 10px;" >
+                                <f:setPropertyActionListener target="#{userSession.providerID}" value="facebook" />
+                                <h:graphicImage value="public/images/facebook_login.png" />
+                            </h:commandLink>
+                        </h:panelGroup>
+                        <h:inputText id="username" required="true" value="#{userController.user.username}" styleClass="sign-in__input" />
+    
+                        <h:inputSecret id="password" required="true" value="#{userController.user.password}" styleClass="sign-in__input" />
+    
+                        <a href="#" class="sign-in__forgot-password" style="width:100px; float: right;">Esqueci a senha</a>
+                        <a href="pages/registerUser.jsf" class="sign-in__forgot-password" style="width:110px; float: left">Não é cadastrado?</a>
+                        <h:commandLink action="#{userController.login}" value="Login" styleClass="btn green" />
+                    </h:form>
+                </div>
+                <div class="sign-in__note">2013 © Brainshare</div>
+            </div>
+        </div>
+        
+    </ui:define>
+</ui:composition>
+
+</html>

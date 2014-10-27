@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.6" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <package id="1" language="java" name="br.brainshare" project="BrainShare" file="/BrainShare/JavaSource/br/brainshare" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="1449" width="2941" x="400" y="-31"/>    
+    <display autosize="false" stereotype="true" accessors="true"/>  
+  </package>  
+  <package id="2" language="java" name="br.brainshare.business" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/business" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="955" width="818" x="1822" y="55"/>    
+    <display autosize="false" stereotype="true" accessors="true"/>  
+  </package>  
+  <interface id="3" language="java" name="br.brainshare.business.IServiceAnswer" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/business/IServiceAnswer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2160" y="636"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="4" language="java" name="br.brainshare.business.IServiceQuestion" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/business/IServiceQuestion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2178" y="857"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="5" language="java" name="br.brainshare.business.IServiceTag" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/business/IServiceTag.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2160" y="234"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="6" language="java" name="br.brainshare.business.IServiceUser" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/business/IServiceUser.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2158" y="448"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="7" language="java" name="br.brainshare.business.ServiceAnswer" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/business/ServiceAnswer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2477" y="646"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="br.brainshare.business.ServiceQuestion" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/business/ServiceQuestion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2494" y="882"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="br.brainshare.business.ServiceTag" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/business/ServiceTag.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2459" y="231"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="br.brainshare.business.ServiceUser" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/business/ServiceUser.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2469" y="447"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <package id="11" language="java" name="br.brainshare.controller" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="1056" width="585" x="1137" y="69"/>    
+    <display autosize="false" stereotype="true" accessors="true"/>  
+  </package>  
+  <class id="12" language="java" name="br.brainshare.controller.AnswerController" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/controller/AnswerController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1460" y="618"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="br.brainshare.controller.LoginFilter" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/controller/LoginFilter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1308" y="907"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="br.brainshare.controller.QuestionController" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/controller/QuestionController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1446" y="327"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="br.brainshare.controller.TagsController" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/controller/TagsController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1437" y="185"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="br.brainshare.controller.UserController" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/controller/UserController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1454" y="487"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="br.brainshare.controller.UserSessionBean" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/controller/UserSessionBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1586" y="900"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="18" language="java" name="br.brainshare.data" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/data" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="900" width="584" x="2711" y="102"/>    
+    <display autosize="false" stereotype="true" accessors="true"/>  
+  </package>  
+  <interface id="19" language="java" name="br.brainshare.data.IDAOAnswer" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/data/IDAOAnswer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2893" y="637"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="20" language="java" name="br.brainshare.data.IDAOQuestion" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/data/IDAOQuestion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2906" y="861"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="21" language="java" name="br.brainshare.data.IDAOTag" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/data/IDAOTag.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2888" y="239"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="22" language="java" name="br.brainshare.data.IDAOUser" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/data/IDAOUser.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2891" y="447"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="23" language="java" name="br.brainshare.data.rdb.DAOHibernateAnswer" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/data/rdb/DAOHibernateAnswer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3124" y="641"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="br.brainshare.data.rdb.DAOHibernateQuestion" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/data/rdb/DAOHibernateQuestion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3193" y="882"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="br.brainshare.data.rdb.DAOHibernateTag" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/data/rdb/DAOHibernateTag.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3116" y="235"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="br.brainshare.data.rdb.DAOHibernateUser" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/data/rdb/DAOHibernateUser.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3114" y="453"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <package id="27" language="java" name="br.brainshare.model" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/model" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="630" width="593" x="425" y="84"/>    
+    <display autosize="false" stereotype="true" accessors="true"/>  
+  </package>  
+  <class id="28" language="java" name="br.brainshare.model.Answer" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/model/Answer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="659" y="635"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="br.brainshare.model.Question" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/model/Question.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="164" width="178" x="445" y="193"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="br.brainshare.model.Tag" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/model/Tag.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="830" y="251"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="br.brainshare.model.User" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/model/User.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="766" y="441"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <package id="32" language="java" name="br.brainshare.util" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/util" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="240" width="599" x="459" y="811"/>    
+    <display autosize="false" stereotype="true" accessors="true"/>  
+  </package>  
+  <class id="33" language="java" name="br.brainshare.util.ConnectionHibernateFilter" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/util/ConnectionHibernateFilter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="650" y="948"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="br.brainshare.util.DAOFactory" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/util/DAOFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="925" y="948"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="35" language="java" name="br.brainshare.validators" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/validators" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="192" width="591" x="1757" y="1125"/>    
+    <display autosize="false" stereotype="true" accessors="true"/>  
+  </package>  
+  <class id="36" language="java" name="br.brainshare.validators.LoginValidator" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/validators/LoginValidator.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1914" y="1250"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="br.brainshare.validators.SearchTagValidator" project="BrainShare" 
+    file="/BrainShare/JavaSource/br/brainshare/validators/SearchTagValidator.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2194" y="1250"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="38" language="java" name="lib.exceptions" project="BrainShare" 
+    file="/BrainShare/JavaSource/lib/exceptions" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="334" width="697" x="2477" y="1053"/>    
+    <display autosize="false" stereotype="true" accessors="true"/>  
+  </package>  
+  <class id="39" language="java" name="lib.exceptions.AnswerException" project="BrainShare" 
+    file="/BrainShare/JavaSource/lib/exceptions/AnswerException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2579" y="1177"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="40" language="java" name="lib.exceptions.CommunicationException" project="BrainShare" 
+    file="/BrainShare/JavaSource/lib/exceptions/CommunicationException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2622" y="1308"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="41" language="java" name="lib.exceptions.DAOException" project="BrainShare" 
+    file="/BrainShare/JavaSource/lib/exceptions/DAOException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2754" y="1177"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="42" language="java" name="lib.exceptions.EmptyFieldException" project="BrainShare" 
+    file="/BrainShare/JavaSource/lib/exceptions/EmptyFieldException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2836" y="1308"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="43" language="java" name="lib.exceptions.QuestionException" project="BrainShare" 
+    file="/BrainShare/JavaSource/lib/exceptions/QuestionException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3033" y="1309"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="44" language="java" name="lib.exceptions.TagException" project="BrainShare" 
+    file="/BrainShare/JavaSource/lib/exceptions/TagException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2919" y="1180"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="45" language="java" name="lib.exceptions.UserException" project="BrainShare" 
+    file="/BrainShare/JavaSource/lib/exceptions/UserException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3083" y="1182"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="46">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="47" name="tags"/>      
+      <multiplicity id="48" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="49">    
+    <bendpoint x="2557" y="935"/>    
+    <bendpoint x="2584" y="915"/>    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="50" name="singleton"/>      
+      <multiplicity id="51" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="52">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="53" name="user"/>      
+      <multiplicity id="54" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="55">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="56" name="user"/>      
+      <multiplicity id="57" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="58">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="59" name="service"/>      
+      <multiplicity id="60" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="61">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <realization id="62">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="19"/>  
+  </realization>  
+  <association id="63">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="64" name="lista"/>      
+      <multiplicity id="65" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="false" multiplicity="false"/>  
+  </association>  
+  <realization id="66">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <association id="67">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="68" name="service"/>      
+      <multiplicity id="69" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="70">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="71" name="answer"/>      
+      <multiplicity id="72" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="false" multiplicity="false"/>  
+  </association>  
+  <association id="73">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="74" name="tagInstance"/>      
+      <multiplicity id="75" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="76">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="77" name="daoUsuario"/>      
+      <multiplicity id="78" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="79">    
+    <bendpoint x="2549" y="706"/>    
+    <bendpoint x="2570" y="685"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="80" name="singleton"/>      
+      <multiplicity id="81" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="82">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="83" name="daoTag"/>      
+      <multiplicity id="84" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="85">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="22"/>  
+  </realization>  
+  <realization id="86">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="20"/>  
+  </realization>  
+  <realization id="87">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="3"/>  
+  </realization>  
+  <association id="88">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="89" name="serviceQuestion"/>      
+      <multiplicity id="90" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="91">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="92" name="question"/>      
+      <multiplicity id="93" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="94">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="95" name="sTag"/>      
+      <multiplicity id="96" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="97">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="98" name="daoQuestion"/>      
+      <multiplicity id="99" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="100">    
+    <bendpoint x="2532" y="509"/>    
+    <bendpoint x="2558" y="494"/>    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="101" name="singleton"/>      
+      <multiplicity id="102" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="103">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="104" name="daoAnswer"/>      
+      <multiplicity id="105" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="106">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="107" name="service"/>      
+      <multiplicity id="108" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="109">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="110" name="quest"/>      
+      <multiplicity id="111" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="false" multiplicity="false"/>  
+  </association>  
+  <association id="112">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="113" name="user"/>      
+      <multiplicity id="114" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="115">    
+    <bendpoint x="2516" y="284"/>    
+    <bendpoint x="2540" y="258"/>    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="116" name="singleton"/>      
+      <multiplicity id="117" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="118">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="21"/>  
+  </realization>  
+  <realization id="119">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <association id="120">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="121" name="service"/>      
+      <multiplicity id="122" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

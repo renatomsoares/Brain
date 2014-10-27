@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<!-- 
+		Replace path to template, title, header and body
+		with actual data.
+	 -->
+	<ui:composition template="/templates/template.xhtml">
+			<ui:define name="pageTitle">Question - Find</ui:define>
+			<ui:define name="pageContent">
+                
+    			<h:form id="listQuestion">
+                    <h:dataTable value="#{questionController.listByTitleOrDesc}" var="question">
+                        <h:column>
+                            <h:commandLink action="#{question.show}"> <span class="title">#{question.title}</span></h:commandLink>
+                        
+                            <span class="author">por <a href="#">#{question.user.username}</a> às #{question.dateRegister}</span>
+                        
+                            <div class="tags">
+                                <a href="#" class="tag">#{question.tags.name}</a> 
+                            </div>
+                       
+                            <span class="question-note">10 Votos</span> <span class="question-note">3 Respostas</span>
+                        </h:column>
+                     </h:dataTable>
+                </h:form>
+                
+			</ui:define>
+	</ui:composition>
+
+</html>

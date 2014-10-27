@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/templates/template.xhtml">
+    <ui:define name="pageTitle">Cadastro de Pergunta</ui:define>
+    <ui:define name="pageContent">
+        <div class="row">
+            <div class="large-4 large-offset-4 columns sign-in">
+                <div class="stacked-box">
+                    <div class="sign-in__title">Perguntar</div>
+                    <h:form id="create">
+                        <h:messages id="msgErro" style="color:red; list-style-type: none;" />
+                        <h:outputLabel value="Titulo: " />
+                        <h:inputText id="titulo" value="#{questionController.quest.title}" />
+
+                        <h:outputLabel value="Insira sua pergunta " />
+                        <h:inputTextarea id="pergunta" value="#{questionController.quest.question}" />
+
+                        <h:outputLabel value="Categoria" />
+                        <h:selectOneMenu value="#{questionController.tagInstance.name}" required="true"
+                            requiredMessage="Campo tag obrigatorio" filter="true" >
+                            <f:selectItem itemValue="" itemLabel="selecione" />
+                            <f:selectItems value="#{tagsController.lista}" itemValue="#{l.name}" var="l"
+                                itemLabel="#{l.name}" />
+                        </h:selectOneMenu>
+
+                        <h:commandButton action="#{questionController.save}" value="Salvar pergunta" style="margin-top:20px;" />
+                    </h:form>
+                    <h:form>
+                        <a href="insertTag.jsf" >Adicionar nova categoria</a><br />
+                        <h:commandLink value="Listar todas as categorias" action="#{tagsController.truelist()}" />
+
+                        <h:dataTable value="#{tagsController.lista}" var="p" rendered="#{tagsController.list}"
+                            id="tabela" border="1">
+
+                            <f:facet name="header">  Lista de todas as categorias</f:facet>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Nome"></h:outputText>
+                                </f:facet>
+                                <h:outputText value='#{p.name}'></h:outputText>
+                                <f:param name="id" value="#{p.id}" />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Quantidade de categoria utilizada"></h:outputText>
+                                </f:facet>
+                                <h:outputText value='#{p.qtd}'></h:outputText>
+                                <f:param name="id" value="#{p.qtd}" />
+                            </h:column>
+                        </h:dataTable>
+
+                    </h:form>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>
+
+</html>

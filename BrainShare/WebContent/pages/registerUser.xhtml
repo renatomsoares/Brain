@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/templates/template.xhtml">
+    <ui:define name="pageTitle">Cadastro de Usuário</ui:define>
+    <ui:define name="pageContent">
+        <div class="row">
+            <div class="large-4 large-offset-4 columns sign-in">
+                <div class="stacked-box">
+                    <div class="sign-in__title">
+                        Cadastro
+                    </div>
+                    <h:form id="create">   
+                        <h:messages id="msgErro" style="color:red; list-style-type: none;" /> 
+                        <h:outputFormat value="Username: " />
+                        <h:inputText value="#{userController.user.username}" />
+        
+                        <h:outputFormat value="Senha: " />
+                        <h:inputSecret id="senha1" value="#{userController.user.password}">
+                            <f:validateLength minimum="6" />                    
+                        </h:inputSecret>
+        
+                        <h:outputFormat value="Confirmar Senha: " />
+                        <h:inputSecret id="senha2" value="#{userController.passwordVal}" />
+        
+                        <h:outputFormat value="Email: " />
+                        <h:inputText id="email" value="#{userController.user.email}" />
+                    
+                        <h:commandButton action="#{userController.save}" value="Salvar" />
+                    </h:form>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<!-- 
+		Replace path to template, title, header and body
+		with actual data.
+	 -->
+	<ui:composition template="/templates/template.xhtml">
+			<ui:define name="pageTitle">Question</ui:define>
+			<ui:define name="pageContent">
+                <div class="row">
+                    <aside class="large-4 push-8 columns">
+                        <div class="stacked-box">
+                            <div class="row collapse">
+                                <h:form id="findQuestion">
+                                    <div class="small-9 large-8 columns">
+                                        <h:inputText value="#{questionController.titleOrDesc}" class="search-input" />
+                                    </div>
+                                    <div class="small-3 large-4 columns">
+                                        <h:commandLink action="#{questionController.find}" target="_blank"><span class="prefix">Buscar</span></h:commandLink>
+                                    </div>
+                                </h:form>
+                            </div>
+                            Para criar uma pergunta, basta clicar no botão abaixo: <br />
+                            <br /> <a href="insertQuestion.jsf" class="btn green">PERGUNTAR</a>
+                        </div>
+                    </aside>
+                    <div class="large-8 pull-4 columns">        
+                        <section class="stacked-box full-question">
+                            <div class="row">
+                                <div class="large-3 columns">
+                                    <img src="#{request.contextPath}/public/images/#{sessionScope['questaoClicada'].user.username}.png" alt="" class="avatar" />
+                                </div>
+                                <div class="large-9 columns">
+                                    <span class="title">#{sessionScope['questaoClicada'].title}</span>
+                                    <span class="author">por <a href="#">#{sessionScope['questaoClicada'].user.username}</a> às #{sessionScope['questaoClicada'].dateRegister}</span>
+                                    <div class="categorias">
+                                        <a href="#" class="categoria">#{sessionScope['questaoClicada'].tags.name}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content">
+                                #{sessionScope['questaoClicada'].question}
+                            </div>
+                        </section>
+                        
+                        
+                        
+                        <h:form id="listAnswer">
+                          <h:dataTable value="#{answerController.lista}" var="answer" >
+                              <h:column>
+                                    <section class="stacked-box answer">
+                                        <div class="row">
+                                            <div class="large-3 columns">
+                                                <img src="#{request.contextPath}/public/images/#{answer.user.username}.png" alt="" class="avatar" />
+                                            </div>
+                                            <div class="large-9 columns">
+                                                
+                                                <span class="author"><a href="#">#{answer.user.username}</a> escreveu:</span>
+                                                
+                                                <p>#{answer.answer}</p>
+                                                
+                                            </div>
+                                        </div>
+                                    </section>
+                               </h:column>
+                          </h:dataTable>
+                        </h:form>
+                        
+                        
+                        <h:form id="createAnswer" rendered="#{userController.loggedIn}">
+                            <h:outputLabel value="Insira sua resposta: " /> 
+                            <h:inputTextarea value="#{answerController.answer.answer}" style="height: 120px;" /> 
+                                
+                            <h:commandButton action="#{answerController.save}" value="Salvar resposta" />
+                        </h:form>
+            
+                    </div>
+                </div>
+			</ui:define>
+	</ui:composition>
+
+</html>

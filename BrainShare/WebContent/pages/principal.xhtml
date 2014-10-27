@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<!-- 
+		Replace path to template, title, header and body
+		with actual data.
+	 -->
+	<ui:composition template="/templates/template.xhtml">
+			<ui:define name="pageTitle">Home - User</ui:define>
+			<ui:define name="pageContent">
+            <h:form>
+                <h:panelGrid rendered="#{empty userSession.profile}" >
+    				Bem Vindo <h:outputFormat value="#{sessionScope['usuarioLogado'].username}" style="color:red;" /> <br />
+                    Email: <h:outputFormat value="#{sessionScope['usuarioLogado'].email}" style="color:red;" /><br/>
+                    <h:commandButton value="Logout" action="#{userController.logout}" rendered="#{userController.loggedIn}" />
+                </h:panelGrid>
+                
+                <h:panelGrid columns="3" rendered="#{not empty userSession.profile}" >
+                    <h:graphicImage rendered="#{not empty userSession.profile.profileImageURL}" value="#{userSession.profile.profileImageURL}" />
+                    <h:outputText value="Oi, #{userSession.profile.fullName}" />
+                    <h:commandButton value="Sair" actionListener="#{userSession.logOut}" />
+                </h:panelGrid>
+            </h:form>
+			</ui:define>
+	</ui:composition>
+
+</html>
