@@ -5,7 +5,7 @@
  <session-factory>
   <!-- Configuração da conexão com o banco de dados -->
   <property name="hibernate.connection.driver_class">org.gjt.mm.mysql.Driver</property>
-  <property name="hibernate.connection.url">jdbc:mysql://localhost/brainshare</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost/brainshare2</property>
   <property name="hibernate.connection.password">admin</property>
   <property name="hibernate.connection.username">root</property>  
   <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -21,5 +21,6 @@
   <mapping class="br.brainshare.model.Answer"/>
   <mapping class="br.brainshare.model.User"/>
   <mapping class="br.brainshare.model.Tag"/>
+  <mapping class="br.brainshare.model.Score"/>
  </session-factory>
 </hibernate-configuration>

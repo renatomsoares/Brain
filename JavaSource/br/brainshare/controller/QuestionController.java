@@ -27,14 +27,11 @@ public class QuestionController {
 
 	private Question quest;
 	private Tag tagInstance;
-
 	private List<Question> lista = null;
 	private List<Question> listaTag = null;
 	private List<Question> listByTitleOrDesc = null;
-
 	private IServiceQuestion service = new ServiceQuestion();
 	private IServiceTag sTag = new ServiceTag();
-
 	private String titleOrDesc = "";
 
 	public QuestionController() {
@@ -42,13 +39,14 @@ public class QuestionController {
 		tagInstance = new Tag();
 	}
 
-	public String save() {
+	public String save() throws DAOException {
 
 		quest.setDateRegister(new Date());
 		HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
 				.getExternalContext().getSession(true);
 		User user = (User) session.getAttribute("usuarioLogado");
 		quest.setUser(user);
+		quest.setScore(0);
 		quest.setCountAnswer(0);
 
 		try {

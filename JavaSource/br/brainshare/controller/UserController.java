@@ -77,7 +77,7 @@ public class UserController implements Serializable {
 				HttpSession sessaoHttp = (HttpSession) facesContext
 						.getExternalContext().getSession(true);
 				sessaoHttp.setAttribute(CREDENTIAL, user);
-				facesContext.getExternalContext().redirect("http://localhost:8080/BrainShare/pages/principal.jsf");
+				facesContext.getExternalContext().redirect("http://localhost:8080/Brain2.0/pages/principal.jsf");
  
 			} else {
 				/* Cria uma mensagem. */

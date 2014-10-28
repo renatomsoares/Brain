@@ -59,7 +59,7 @@ public class UserSessionBean implements Serializable {
         System.out.println("manager = "+manager);
         System.out.println("profile = "+providerID);
         // 'successURL' is the page you'll be redirected to on successful login
-        String successURL = "http://localhost:8080/BrainShare/pages/socialLoginSuccess.jsf"; 
+        String successURL = "http://localhost:8080/Brain2.0/pages/socialLoginSuccess.jsf"; 
         String authenticationURL = manager.getAuthenticationUrl(providerID, successURL);
         FacesContext.getCurrentInstance().getExternalContext().redirect(authenticationURL);
     }
@@ -95,7 +95,7 @@ public class UserSessionBean implements Serializable {
                 HttpSession sessaoHttp = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
     			sessaoHttp.setAttribute(UserController.CREDENTIAL, user);
     			
-    			FacesContext.getCurrentInstance().getExternalContext().redirect("http://localhost:8080/BrainShare/pages/principal.jsf");
+    			FacesContext.getCurrentInstance().getExternalContext().redirect("http://localhost:8080/Brain2.0/pages/principal.jsf");
                 // Do what you want with the data (e.g. persist to the database, etc.)
                 return "login success";
             

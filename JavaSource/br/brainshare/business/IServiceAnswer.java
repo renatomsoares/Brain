@@ -12,5 +12,5 @@ public interface IServiceAnswer {
 	
 	public void save(Answer resp) throws AnswerException, EmptyFieldException, DAOException;
 	public List<Answer> listAll(Question question) throws AnswerException, DAOException;
-	
+	public void setScore(Answer resp);
 }

@@ -42,14 +42,14 @@ public class AnswerController implements Serializable {
 		this.answer = new Answer();
 	}
 	
-	public String save() {
+	public String save() throws DAOException {
 		this.answer.setDateRegister(new Date());
 		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
 		User user = (User) session.getAttribute("usuarioLogado");
 		Question question = (Question) session.getAttribute("questaoClicada");
 		this.answer.setUser(user);
 		this.answer.setQuestion(question);
-		question.setCountAnswer(1);
+		serviceQuestion.countAnswer(question);
 		try {
 			this.serviceQuestion.update(question);
 		} catch (QuestionException e1) {

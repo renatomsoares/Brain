@@ -31,6 +31,10 @@ public class Answer {
 	@NotNull
 	private String answer;
 	
+	@Column(name = "score", columnDefinition = "integer default '0'")
+	private Integer score;
+
+
 	@Column(name = "data_cadastro", nullable = false)
 	private Date dateRegister;
 
@@ -72,5 +76,13 @@ public class Answer {
 
 	public void setDateRegister(Date dateRegister) {
 		this.dateRegister = dateRegister;
+	}
+	
+	public Integer getScore() {
+		return score;
+	}
+
+	public void setScore(Integer score) {
+		this.score = score;
 	}
 }

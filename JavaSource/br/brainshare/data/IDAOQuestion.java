@@ -26,4 +26,8 @@ public void save(Question question) throws DAOException;
 	public Integer countByAnswer(Integer id) throws DAOException;
 	
 	public void update(Question q) throws DAOException;
+
+	public void setScore(Question q, Integer score);
+
+	void setCountAnswer(Question q);
 }

@@ -3,10 +3,12 @@ package br.brainshare.util;
 import br.brainshare.HibernateUtil;
 import br.brainshare.data.IDAOAnswer;
 import br.brainshare.data.IDAOQuestion;
+import br.brainshare.data.IDAOScore;
 import br.brainshare.data.IDAOTag;
 import br.brainshare.data.IDAOUser;
 import br.brainshare.data.rdb.DAOHibernateAnswer;
 import br.brainshare.data.rdb.DAOHibernateQuestion;
+import br.brainshare.data.rdb.DAOHibernateScore;
 import br.brainshare.data.rdb.DAOHibernateTag;
 import br.brainshare.data.rdb.DAOHibernateUser;
 
@@ -38,5 +40,12 @@ public class DAOFactory {
 		tag.setSession(HibernateUtil.getSession()
 				.getCurrentSession());
 		return tag;
+	}
+	
+	public static IDAOScore createScoreDAO() {
+		DAOHibernateScore score = new DAOHibernateScore();
+		score.setSession(HibernateUtil.getSession()
+				.getCurrentSession());
+		return score;
 	}
 }

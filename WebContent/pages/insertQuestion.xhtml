@@ -11,21 +11,21 @@
                     <div class="sign-in__title">Perguntar</div>
                     <h:form id="create">
                         <h:messages id="msgErro" style="color:red; list-style-type: none;" />
-                        <h:outputLabel value="Titulo: " />
+                        <h:outputLabel value="Título: " />
                         <h:inputText id="titulo" value="#{questionController.quest.title}" />
 
-                        <h:outputLabel value="Insira sua pergunta " />
+                        <h:outputLabel value="Descrição da pergunta:" />
                         <h:inputTextarea id="pergunta" value="#{questionController.quest.question}" />
 
-                        <h:outputLabel value="Categoria" />
+                        <h:outputLabel value="Categoria:" />
                         <h:selectOneMenu value="#{questionController.tagInstance.name}" required="true"
                             requiredMessage="Campo tag obrigatorio" filter="true" >
-                            <f:selectItem itemValue="" itemLabel="selecione" />
+                            <f:selectItem itemValue="" itemLabel="--Selecione--" />
                             <f:selectItems value="#{tagsController.lista}" itemValue="#{l.name}" var="l"
                                 itemLabel="#{l.name}" />
                         </h:selectOneMenu>
 
-                        <h:commandButton action="#{questionController.save}" value="Salvar pergunta" style="margin-top:20px;" />
+                        <h:commandButton action="#{questionController.save}" value="Perguntar" style="margin-top:20px;" />
                     </h:form>
                     <h:form>
                         <a href="insertTag.jsf" >Adicionar nova categoria</a><br />

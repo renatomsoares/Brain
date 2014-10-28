@@ -50,4 +50,26 @@ public class DAOHibernateAnswer implements IDAOAnswer {
 			throw new DAOException ("Erro ao listar respostas no DAO.");
 		}
 	}
+	
+	@Override
+	public Answer getAnswerInstance(Answer a) throws DAOException {
+		try {
+			Answer answerInstance = (Answer) session.createCriteria(Answer.class)
+					.add(Restrictions.or(Restrictions.eq("title", a.getId()), Restrictions.eq("answer", a.getId())))
+					.uniqueResult();
+			return answerInstance;
+		} catch (Exception e) {
+			throw new DAOException ("Erro ao procurar instância de resposta no DAO.");
+		}
+	}
+	
+	@Override
+	public void updateScore(Answer a, Integer score) throws DAOException {
+		try {
+			a.setScore(score);
+		this.session.update(a);
+		} catch (Exception e) {
+			throw new DAOException ("Erro ao atualizar resposta no DAO.");
+		}
+	}
 }

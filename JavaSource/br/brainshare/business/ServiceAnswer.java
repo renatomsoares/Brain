@@ -46,4 +46,10 @@ public class ServiceAnswer implements IServiceAnswer {
 		return this.daoAnswer.listAll(question);
 	}
 
+	@Override
+	public void setScore(Answer resp) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

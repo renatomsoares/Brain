@@ -45,8 +45,11 @@ public class Question {
 	@JoinColumn(name = "id_user", nullable = true)
 	private User user;
 	
-	@Column(columnDefinition = "default '0'")
+	@Column(columnDefinition = "integer default '0'")
 	private Integer countAnswer;
+	
+	@Column(columnDefinition = "integer default '0'")
+	private Integer score;
 
 	public User getUser() {
 		return user;
@@ -103,11 +106,7 @@ public class Question {
 	}
 	
 	public void setCountAnswer(Integer countAnswer) {
-		if (this.countAnswer != null) {
-			this.countAnswer = this.countAnswer+countAnswer;
-		} else {
-			this.countAnswer = 0;
-		}
+		this.countAnswer = countAnswer;
 	}
 	
 	public String show(){
@@ -123,6 +122,14 @@ public class Question {
 		HttpSession sessaoHttp = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);  
         sessaoHttp.setAttribute("questaoClicada", q);
 		return "question";
+	}
+
+	public Integer getScore() {
+		return score;
+	}
+
+	public void setScore(Integer score) {
+		this.score = score;
 	}
 	
 }

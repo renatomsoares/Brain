@@ -10,5 +10,6 @@ public interface IDAOAnswer {
 	
 	public void save(Answer resposta) throws DAOException;
 	public List<Answer> listAll(Question question) throws DAOException;
-	
+	Answer getAnswerInstance(Answer a) throws DAOException;
+	void updateScore(Answer a, Integer score) throws DAOException;
 }

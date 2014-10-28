@@ -19,7 +19,6 @@ public class ConnectionHibernateFilter implements Filter {
 	
 	@Override
 	public void destroy() {
-		
 	}
 
 	@Override

@@ -146,6 +146,17 @@ public class DAOHibernateQuestion implements IDAOQuestion {
 			throw new DAOException ("Erro ao atualizar questão no DAO.");
 		}
 	}
+	
+	@Override
+	public void setScore(Question q, Integer score) {
+		q.setScore(q.getScore() + score);
+	}
+	
+	@Override
+	public void setCountAnswer(Question q) {
+		q.setCountAnswer(q.getCountAnswer()+1);
+	}
+	
 
 
 }

@@ -84,10 +84,26 @@ public class ServiceQuestion implements IServiceQuestion{
 			String desc) throws QuestionException, DAOException {
 		return this.daoQuestion.findQuestionByTitleOrDescription(title, desc);
 	}
+
+	
 	@Override
-	public Integer countByAnswer(Integer id) throws QuestionException, DAOException {
-		return this.daoQuestion.countByAnswer(id);
+	public void countAnswer(Question q) throws DAOException {
+		q.setCountAnswer(q.getCountAnswer()+1);
+		this.daoQuestion.update(q);
 	}
+	
+	@Override
+	public void setScore(Question q, Integer score) {
+		Integer novoScore = q.getScore() + score; 
+		q.setScore(novoScore);
+		try {
+			this.daoQuestion.update(q);
+		} catch (DAOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	@Override
 	public void update(Question q) throws QuestionException, DAOException {
 		if (!daoQuestion.findQuestion(q)) {
