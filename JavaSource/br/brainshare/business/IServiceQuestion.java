@@ -24,7 +24,9 @@ public interface IServiceQuestion {
 	public Question getQuestionInstance(String title) throws QuestionException, DAOException;
 	
 	public List<Question> findQuestionByTitleOrDescription(String title, String desc) throws QuestionException, DAOException;
-		
+	
+	public List<Question> findSuggestionTitle(String title, String desc) throws QuestionException, DAOException;
+
 	public void update(Question q) throws QuestionException, DAOException;
 
 	public void setScore(Question q, Integer score);

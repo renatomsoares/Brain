@@ -121,5 +121,11 @@ public class ServiceQuestion implements IServiceQuestion{
 		}
 	}
 	
+	@Override
+	public List<Question> findSuggestionTitle(String title, String desc)
+			throws QuestionException, DAOException {
+		return this.daoQuestion.findSuggestionTitle(title, desc);
+	}
+	
 
 }

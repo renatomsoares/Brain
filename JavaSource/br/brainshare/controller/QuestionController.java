@@ -30,6 +30,7 @@ public class QuestionController {
 	private List<Question> lista = null;
 	private List<Question> listaTag = null;
 	private List<Question> listByTitleOrDesc = null;
+	private List<Question> listSuggestionByTitle = null;
 	private IServiceQuestion service = new ServiceQuestion();
 	private IServiceTag sTag = new ServiceTag();
 	private String titleOrDesc = "";
@@ -123,6 +124,21 @@ public class QuestionController {
 			}
 		}
 		return listByTitleOrDesc;
+	}
+	
+	public List<Question> getListSuggestionByTitle(String Sugtitle,String SugDesc) {
+		System.out.println("aqui " + Sugtitle + " "+ SugDesc);
+		if (listSuggestionByTitle == null) {
+			try {
+				listSuggestionByTitle = service.findSuggestionTitle(
+						Sugtitle, SugDesc);
+			} catch (QuestionException e) {
+				e.printStackTrace();
+			} catch (DAOException e) {
+				e.printStackTrace();
+			}
+		}
+		return listSuggestionByTitle;
 	}
 
 	public String getTitleOrDesc() {

@@ -107,7 +107,27 @@
 						value="Responder" />
 				</h:form>
 
-
+				<h:outputLabel value="Perguntas relacionadas " />
+            			<h:form id="listSuggestions">
+            				<h:dataTable id="listagem"
+            					value="#{questionController.getListSuggestionByTitle(sessionScope['questaoClicada'].title,sessionScope['questaoClicada'].question)}"
+            					var="question">
+            					<h:column>
+            						<section
+            							class="stacked-box suggestion">
+            							<h:commandLink
+            								action="#{question.show}">
+            								<span class="title">
+            									#{question.title}
+            								</span>
+            							</h:commandLink>
+            							<span class="desc">
+            								#{question.question}
+            							</span>
+            						</section>
+            					</h:column>
+                     		</h:dataTable>
+            			</h:form>
 
 
 			</div>

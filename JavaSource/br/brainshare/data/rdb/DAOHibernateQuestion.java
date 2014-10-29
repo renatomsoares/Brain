@@ -1,11 +1,15 @@
 package br.brainshare.data.rdb;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import lib.exceptions.DAOException;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
@@ -157,6 +161,37 @@ public class DAOHibernateQuestion implements IDAOQuestion {
 		q.setCountAnswer(q.getCountAnswer()+1);
 	}
 	
+	@Override
+	public List<Question> findSuggestionTitle(String title, String desc)
+			throws DAOException {
+		
+		try {
+		Criteria lista = session.createCriteria(Question.class);
+		List<Question> lista_=new ArrayList<Question>();
+		String[] desc_ = desc.split(" ");
+		int count=0;
+		for(int i=0; i < desc_.length; i++) {
+					lista.add(Restrictions.or(
+							Restrictions.ilike("title", title , MatchMode.ANYWHERE),
+							Restrictions.ilike("question", desc_[i] ,MatchMode.ANYWHERE)
+							)).list();
+			
+			lista_.addAll(lista.list());
+		
+		
+		}
+		
+		Set set = new HashSet(lista_);
+		ArrayList uniqueList = new ArrayList(set);
+		
+		System.out.println(uniqueList.size());
+		uniqueList.remove(getQuestionInstance(title));
+			return uniqueList;
+		} 
+		catch (Exception e) {
+			throw new DAOException ("Erro ao buscar questão por título ou descrição no DAO.");
+		}
+	}
 
 
 }

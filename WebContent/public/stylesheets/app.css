@@ -5471,6 +5471,11 @@ body {
   padding: 20px;
 }
 
+.suggestion{
+	background: #D3D3D3;
+
+}
+
 /* line 189, ../sass/app.scss */
 .categoria {
   font-size: 12px;
