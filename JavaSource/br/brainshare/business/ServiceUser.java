@@ -5,6 +5,7 @@ import java.util.List;
 import lib.exceptions.DAOException;
 import lib.exceptions.UserException;
 import br.brainshare.data.IDAOUser;
+import br.brainshare.model.Question;
 import br.brainshare.model.User;
 import br.brainshare.util.DAOFactory;
 
@@ -59,4 +60,9 @@ public class ServiceUser implements IServiceUser{
 	public boolean findUserLogin(User user) throws UserException, DAOException {
 		return this.daoUsuario.findUserLogin(user);
 	}	
+	
+	@Override
+	public boolean pontuouPergunta(User user, Question question) {
+		return this.daoUsuario.jaPontuouAPergunta(user, question);
+	}
 }

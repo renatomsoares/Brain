@@ -11,6 +11,7 @@ import org.hibernate.criterion.Restrictions;
 import br.brainshare.data.IDAOScore;
 import br.brainshare.model.Question;
 import br.brainshare.model.Score;
+import br.brainshare.model.User;
 
 public class DAOHibernateScore implements IDAOScore {
 
@@ -66,5 +67,4 @@ public class DAOHibernateScore implements IDAOScore {
 			throw new DAOException ("Erro ao pegar instância de score no DAO.");
 		}
 	}
-
 }

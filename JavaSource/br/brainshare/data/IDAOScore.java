@@ -3,6 +3,7 @@ package br.brainshare.data;
 import lib.exceptions.DAOException;
 import br.brainshare.model.Question;
 import br.brainshare.model.Score;
+import br.brainshare.model.User;
 
 public interface IDAOScore {
 

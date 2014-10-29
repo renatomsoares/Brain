@@ -9,6 +9,9 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
 import br.brainshare.data.IDAOUser;
+import br.brainshare.model.Answer;
+import br.brainshare.model.Question;
+import br.brainshare.model.Score;
 import br.brainshare.model.User;
 
 public class DAOHibernateUser implements IDAOUser {
@@ -89,6 +92,30 @@ public class DAOHibernateUser implements IDAOUser {
 		} catch (Exception e) {
 			throw new DAOException ("Erro ao procurar usuário no DAO.");
 		}
+	}
+	
+	@Override
+	public boolean jaPontuouAPergunta(User user, Question question) {
+		Score scoreInstance = (Score) session
+				.createCriteria(Score.class)
+				.add(Restrictions.eq("user", user))
+				.add(Restrictions.eq("question", question)).uniqueResult();
+		if (scoreInstance != null) {
+			return true;
+		} else
+			return false;		
+	}
+	
+	@Override
+	public boolean jaPontuouAResposta(User user, Answer answer) {
+		Score scoreInstance = (Score) session
+				.createCriteria(Score.class)
+				.add(Restrictions.eq("user", user))
+				.add(Restrictions.eq("answer", answer)).uniqueResult();
+		if (scoreInstance != null) {
+			return true;
+		} else
+			return false;		
 	}
 
 }

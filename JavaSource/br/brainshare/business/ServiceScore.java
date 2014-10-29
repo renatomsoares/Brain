@@ -4,7 +4,7 @@ import lib.exceptions.DAOException;
 import br.brainshare.data.IDAOScore;
 import br.brainshare.model.Question;
 import br.brainshare.model.Score;
-
+import br.brainshare.model.User;
 import br.brainshare.util.DAOFactory;
 
 public class ServiceScore implements IServiceScore {
