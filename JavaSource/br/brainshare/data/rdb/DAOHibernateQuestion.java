@@ -10,6 +10,7 @@ import lib.exceptions.DAOException;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
@@ -19,8 +20,9 @@ import br.brainshare.model.Question;
 
 public class DAOHibernateQuestion implements IDAOQuestion {
 
-	private Session session;
+	public Session session;
 
+	@Override
 	public Session getSession() {
 		return session;
 	}
@@ -74,11 +76,12 @@ public class DAOHibernateQuestion implements IDAOQuestion {
 	public List<Question> findQuestionByTitleOrDescription(String title, String desc) throws DAOException{
 
 		try {
-			List<Question> lista = session.createCriteria(Question.class)
+			List<Question> lista = session.createCriteria(Question.class).addOrder(Order.asc("id"))
 					.add(Restrictions.or(
 							Restrictions.like("title", "%"+title+"%"),
 							Restrictions.like("question", "%"+desc+"%")
 							)).list();
+		
 
 			System.out.println("lista: "+lista.get(0).getTitle());
 
@@ -192,6 +195,7 @@ public class DAOHibernateQuestion implements IDAOQuestion {
 			throw new DAOException ("Erro ao buscar questão por título ou descrição no DAO.");
 		}
 	}
+	
 
 
 }

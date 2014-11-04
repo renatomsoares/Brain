@@ -32,4 +32,7 @@ public interface IServiceQuestion {
 	public void setScore(Question q, Integer score);
 	
 	void countAnswer(Question q) throws DAOException;
+
+	List<Question> findSuggestion(String title, String desc)
+			throws QuestionException, DAOException;
 }

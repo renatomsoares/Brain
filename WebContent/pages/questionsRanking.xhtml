@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/templates/template.xhtml">
+    <ui:define name="pageTitle">Brainshare - Compartilhando Sabedoria</ui:define>
+    <ui:define name="pageContent">
+        <div class="row">
+            <h:form id="findQuestion">
+               
+                <div  class="large-20 pull-1 columns">
+                    <h:dataTable id="listagem" value="#{questionController.listByTitleOrDesc}" var="question" >
+                        <h:column>
+                            <section class="stacked-box question">
+                            
+                                <span class="question-note">#{question.score} pontos</span>
+
+                                <h:commandLink action="#{question.show}"> <span class="title">#{question.title}</span></h:commandLink>
+                            
+                            </section>
+                        </h:column>
+                     </h:dataTable>
+                </div>
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>
+
+</html>

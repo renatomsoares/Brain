@@ -7,16 +7,22 @@ import lib.exceptions.EmptyFieldException;
 import lib.exceptions.QuestionException;
 import br.brainshare.data.IDAOQuestion;
 import br.brainshare.model.Question;
+import br.brainshare.suggestion.DAOSuggestionByTitle;
+import br.brainshare.suggestion.SuggestionContext;
 import br.brainshare.util.DAOFactory;
+
+
 
 public class ServiceQuestion implements IServiceQuestion{
 
 	private static ServiceQuestion singleton = null;	
-	private IDAOQuestion daoQuestion;
+	public IDAOQuestion daoQuestion;
+	private SuggestionContext context;
 
 	public ServiceQuestion(){
 		this.daoQuestion = DAOFactory.createQuestionDAO();
-
+		context = new SuggestionContext(new DAOSuggestionByTitle(daoQuestion.getSession()));
+	
 	}
 	public static ServiceQuestion getInstance(){
 		if(singleton==null){
@@ -44,7 +50,7 @@ public class ServiceQuestion implements IServiceQuestion{
 			}
 		}
 	}
-	
+
 	@Override
 	public boolean save(Question q) throws EmptyFieldException, QuestionException, DAOException {
 
@@ -65,12 +71,12 @@ public class ServiceQuestion implements IServiceQuestion{
 	public Question getQuestionInstance(Question question) throws QuestionException, DAOException {
 		return this.daoQuestion.getQuestionInstance(question);
 	}
-	
+
 	@Override
 	public boolean findQuestion(Question quest) throws QuestionException, DAOException {
 		return this.daoQuestion.findQuestion(quest);
 	}
-	
+
 	@Override
 	public Question editQuestion(Question q) throws QuestionException {
 		return null;
@@ -85,13 +91,13 @@ public class ServiceQuestion implements IServiceQuestion{
 		return this.daoQuestion.findQuestionByTitleOrDescription(title, desc);
 	}
 
-	
+
 	@Override
 	public void countAnswer(Question q) throws DAOException {
 		q.setCountAnswer(q.getCountAnswer()+1);
 		this.daoQuestion.update(q);
 	}
-	
+
 	@Override
 	public void setScore(Question q, Integer score) {
 		Integer novoScore = q.getScore() + score; 
@@ -103,7 +109,7 @@ public class ServiceQuestion implements IServiceQuestion{
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Override
 	public void update(Question q) throws QuestionException, DAOException {
 		if (!daoQuestion.findQuestion(q)) {
@@ -120,12 +126,17 @@ public class ServiceQuestion implements IServiceQuestion{
 			}
 		}
 	}
-	
+
 	@Override
 	public List<Question> findSuggestionTitle(String title, String desc)
 			throws QuestionException, DAOException {
-		return this.daoQuestion.findSuggestionTitle(title, desc);
+		return daoQuestion.findSuggestionTitle(title, desc);
 	}
-	
+
+	@Override
+	public List<Question> findSuggestion(String title, String desc)
+			throws QuestionException, DAOException {
+		return context.executeStrategy(title, desc);
+	}	
 
 }

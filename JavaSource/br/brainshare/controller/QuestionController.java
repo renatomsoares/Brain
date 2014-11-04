@@ -30,7 +30,7 @@ public class QuestionController {
 	private List<Question> lista = null;
 	private List<Question> listaTag = null;
 	private List<Question> listByTitleOrDesc = null;
-	private List<Question> listSuggestionByTitle = null;
+	private List<Question> listSuggestion = null;
 	private IServiceQuestion service = new ServiceQuestion();
 	private IServiceTag sTag = new ServiceTag();
 	private String titleOrDesc = "";
@@ -126,11 +126,11 @@ public class QuestionController {
 		return listByTitleOrDesc;
 	}
 	
-	public List<Question> getListSuggestionByTitle(String Sugtitle,String SugDesc) {
+	public List<Question> getListSuggestion(String Sugtitle,String SugDesc) {
 		System.out.println("aqui " + Sugtitle + " "+ SugDesc);
-		if (listSuggestionByTitle == null) {
+		if (listSuggestion == null) {
 			try {
-				listSuggestionByTitle = service.findSuggestionTitle(
+				listSuggestion = service.findSuggestion(
 						Sugtitle, SugDesc);
 			} catch (QuestionException e) {
 				e.printStackTrace();
@@ -138,7 +138,7 @@ public class QuestionController {
 				e.printStackTrace();
 			}
 		}
-		return listSuggestionByTitle;
+		return listSuggestion;
 	}
 
 	public String getTitleOrDesc() {

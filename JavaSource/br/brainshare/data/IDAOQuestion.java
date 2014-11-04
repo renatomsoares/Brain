@@ -2,6 +2,8 @@ package br.brainshare.data;
 
 import java.util.List;
 
+import org.hibernate.Session;
+
 import lib.exceptions.DAOException;
 import br.brainshare.model.Question;
 
@@ -32,5 +34,7 @@ public void save(Question question) throws DAOException;
 	public void setScore(Question q, Integer score);
 
 	void setCountAnswer(Question q);
+
+	Session getSession();
 	
 }
