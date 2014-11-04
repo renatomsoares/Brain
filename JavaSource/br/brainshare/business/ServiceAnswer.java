@@ -15,18 +15,18 @@ public class ServiceAnswer implements IServiceAnswer {
 	private IDAOAnswer daoAnswer;
 
 	private static ServiceAnswer singleton = null;
-	
+
 	public ServiceAnswer(){
 		this.daoAnswer = DAOFactory.createAnswerDAO();
 	}
-	
+
 	public static ServiceAnswer getInstance(){
 		if(singleton == null){
 			singleton = new ServiceAnswer();
 		}
 		return singleton;
 	}
-	
+
 	@Override
 	public void save(Answer resp) throws AnswerException, EmptyFieldException, DAOException {
 		if (resp.getAnswer() == "") {
@@ -49,7 +49,7 @@ public class ServiceAnswer implements IServiceAnswer {
 	@Override
 	public void setScore(Answer resp) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

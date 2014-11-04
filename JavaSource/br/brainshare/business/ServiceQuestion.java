@@ -7,6 +7,9 @@ import lib.exceptions.EmptyFieldException;
 import lib.exceptions.QuestionException;
 import br.brainshare.data.IDAOQuestion;
 import br.brainshare.model.Question;
+import br.brainshare.ordinationQuestion.OrdinationByAnswersNumber;
+import br.brainshare.ordinationQuestion.OrdinationByTime;
+import br.brainshare.ordinationQuestion.OrdinationContext;
 import br.brainshare.suggestion.DAOSuggestionByTitle;
 import br.brainshare.suggestion.SuggestionContext;
 import br.brainshare.util.DAOFactory;
@@ -15,14 +18,18 @@ import br.brainshare.util.DAOFactory;
 
 public class ServiceQuestion implements IServiceQuestion{
 
-	private static ServiceQuestion singleton = null;	
-	public IDAOQuestion daoQuestion;
-	private SuggestionContext context;
+	private static ServiceQuestion singleton = null;
+
+	private IDAOQuestion daoQuestion;
+
+	private SuggestionContext contextSuggestion;
+
+	private OrdinationContext contextOrdination;
 
 	public ServiceQuestion(){
 		this.daoQuestion = DAOFactory.createQuestionDAO();
-		context = new SuggestionContext(new DAOSuggestionByTitle(daoQuestion.getSession()));
-	
+		contextSuggestion = new SuggestionContext(new DAOSuggestionByTitle(daoQuestion.getSession()));
+		contextOrdination = new OrdinationContext(new OrdinationByAnswersNumber(daoQuestion.getSession()));
 	}
 	public static ServiceQuestion getInstance(){
 		if(singleton==null){
@@ -86,9 +93,9 @@ public class ServiceQuestion implements IServiceQuestion{
 		return this.daoQuestion.getQuestionInstance(title);
 	}
 	@Override
-	public List<Question> findQuestionByTitleOrDescription(String title,
+	public List<Question> findQuestions(String title,
 			String desc) throws QuestionException, DAOException {
-		return this.daoQuestion.findQuestionByTitleOrDescription(title, desc);
+		return contextOrdination.executeStrategy(title, desc);
 	}
 
 
@@ -127,16 +134,18 @@ public class ServiceQuestion implements IServiceQuestion{
 		}
 	}
 
+	/*
 	@Override
 	public List<Question> findSuggestionTitle(String title, String desc)
 			throws QuestionException, DAOException {
 		return daoQuestion.findSuggestionTitle(title, desc);
 	}
+	 */
 
 	@Override
 	public List<Question> findSuggestion(String title, String desc)
 			throws QuestionException, DAOException {
-		return context.executeStrategy(title, desc);
+		return contextSuggestion.executeStrategy(title, desc);
 	}	
 
 }

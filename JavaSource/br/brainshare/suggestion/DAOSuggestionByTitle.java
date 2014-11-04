@@ -20,7 +20,6 @@ public class DAOSuggestionByTitle implements IDAOSuggestionStrategy{
 	public DAOSuggestionByTitle(Session session) {
 		this.session = session;
 	}
-	
 
 	public Question getQuestionInstance(String title) throws DAOException {
 

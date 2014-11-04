@@ -25,7 +25,7 @@ public void save(Question question) throws DAOException;
 	
 	public List<Question> findQuestionByTitleOrDescription(String title, String desc) throws DAOException;
 	
-	public List<Question> findSuggestionTitle(String title, String desc) throws DAOException;
+	//public List<Question> findSuggestionTitle(String title, String desc) throws DAOException;
 	
 	public Integer countByAnswer(Integer id) throws DAOException;
 	

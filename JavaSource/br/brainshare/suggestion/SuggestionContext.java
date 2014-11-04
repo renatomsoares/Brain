@@ -2,7 +2,6 @@ package br.brainshare.suggestion;
 
 import java.util.List;
 
-import org.hibernate.Session;
 
 import lib.exceptions.DAOException;
 import br.brainshare.model.Question;

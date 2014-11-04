@@ -1,15 +1,13 @@
 package br.brainshare.data.rdb;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+
 import java.util.List;
-import java.util.Set;
+
 
 import lib.exceptions.DAOException;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
@@ -164,6 +162,7 @@ public class DAOHibernateQuestion implements IDAOQuestion {
 		q.setCountAnswer(q.getCountAnswer()+1);
 	}
 	
+	/*
 	@Override
 	public List<Question> findSuggestionTitle(String title, String desc)
 			throws DAOException {
@@ -195,6 +194,7 @@ public class DAOHibernateQuestion implements IDAOQuestion {
 			throw new DAOException ("Erro ao buscar questão por título ou descrição no DAO.");
 		}
 	}
+	*/
 	
 
 

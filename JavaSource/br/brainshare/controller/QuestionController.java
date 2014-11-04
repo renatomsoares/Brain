@@ -115,8 +115,7 @@ public class QuestionController {
 	public List<Question> getListByTitleOrDesc() {
 		if (listByTitleOrDesc == null) {
 			try {
-				listByTitleOrDesc = service.findQuestionByTitleOrDescription(
-						titleOrDesc, titleOrDesc);
+				listByTitleOrDesc = service.findQuestions(titleOrDesc, titleOrDesc);
 			} catch (QuestionException e) {
 				e.printStackTrace();
 			} catch (DAOException e) {

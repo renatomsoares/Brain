@@ -11,27 +11,27 @@ import br.brainshare.util.DAOFactory;
 
 public class ServiceUser implements IServiceUser{
 
-	
 	private static ServiceUser singleton = null;
+
 	private IDAOUser daoUsuario;
-	
+
 	public ServiceUser(){
 		this.daoUsuario = DAOFactory.createUserDAO();
 	}
-	
+
 	public static ServiceUser getInstance() {
 		if (singleton == null) {
 			singleton = new ServiceUser();
 		}
 		return singleton;
 	}
-	
-	
+
+
 	public List<User> listAllUser() throws UserException, DAOException {
 		return this.daoUsuario.listAll();
 	}
 
-	
+
 	public void save(User user) throws UserException, DAOException {
 
 		if (user.getUsername() == "") {
@@ -60,7 +60,7 @@ public class ServiceUser implements IServiceUser{
 	public boolean findUserLogin(User user) throws UserException, DAOException {
 		return this.daoUsuario.findUserLogin(user);
 	}	
-	
+
 	@Override
 	public boolean pontuouPergunta(User user, Question question) {
 		return this.daoUsuario.jaPontuouAPergunta(user, question);

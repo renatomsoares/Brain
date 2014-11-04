@@ -2,7 +2,6 @@ package br.brainshare.controller;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.security.AuthProvider;
 import java.util.Date;
 import java.util.Map;
 import java.util.Properties;
@@ -38,7 +37,6 @@ public class UserSessionBean implements Serializable {
     private String originalURL;
     private String providerID;
     private Profile profile;
-    private String contexto;
     
 	public UserSessionBean() {  }
     

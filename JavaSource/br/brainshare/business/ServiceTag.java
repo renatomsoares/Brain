@@ -10,7 +10,7 @@ import br.brainshare.util.DAOFactory;
 
 public class ServiceTag implements IServiceTag {
 	
-	IDAOTag daoTag = DAOFactory.createTagDAO();
+	private IDAOTag daoTag = DAOFactory.createTagDAO();
 	
 	private static ServiceTag singleton = null;
 	
