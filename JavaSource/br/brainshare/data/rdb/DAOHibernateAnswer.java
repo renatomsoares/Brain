@@ -59,7 +59,7 @@ public class DAOHibernateAnswer implements IDAOAnswer {
 					.uniqueResult();
 			return answerInstance;
 		} catch (Exception e) {
-			throw new DAOException ("Erro ao procurar inst√¢ncia de resposta no DAO.");
+			throw new DAOException ("Erro ao procurar inst‚ncia de resposta no DAO.");
 		}
 	}
 	

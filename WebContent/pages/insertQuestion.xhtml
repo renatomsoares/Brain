@@ -19,7 +19,7 @@
 
                         <h:outputLabel value="Categoria:" />
                         <h:selectOneMenu value="#{questionController.tagInstance.name}" required="true"
-                            requiredMessage="Campo tag obrigatorio" filter="true" >
+                            requiredMessage="Por favor, insira uma tag." filter="true" >
                             <f:selectItem itemValue="" itemLabel="--Selecione--" />
                             <f:selectItems value="#{tagsController.lista}" itemValue="#{l.name}" var="l"
                                 itemLabel="#{l.name}" />

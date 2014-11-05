@@ -48,11 +48,11 @@ public class UserController implements Serializable {
 		try {
 			if (!user.getPassword().equals(passwordVal) || service.findUser(user)) {
 				if(!user.getPassword().equals(passwordVal)){
-					FacesMessage msg = new FacesMessage("Senhas diferentes");
+					FacesMessage msg = new FacesMessage("As senhas n„o conferem.");
 					FacesContext.getCurrentInstance().addMessage("erro", msg);
 					
 				} else {
-					FacesMessage msg = new FacesMessage("J√° existe um usu√°rio com esse email");
+					FacesMessage msg = new FacesMessage("J· existe um usu·rio com esse e-mail");
 					FacesContext.getCurrentInstance().addMessage("erro", msg);
 				}
 				return null;
@@ -81,7 +81,7 @@ public class UserController implements Serializable {
  
 			} else {
 				/* Cria uma mensagem. */
-				FacesMessage msg = new FacesMessage("Usu√°rio ou senha inv√°lido!");
+				FacesMessage msg = new FacesMessage("Usu·rio/Senha invalido(s).");
 				/*
 				 * Obt√©m a instancia atual do FacesContext e adiciona a mensagem de
 				 * erro nele.

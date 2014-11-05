@@ -38,7 +38,7 @@ public class DAOHibernateQuestion implements IDAOQuestion {
 			List<Question> questions = lista.list();
 			return questions;
 		} catch (Exception e) {
-			throw new DAOException ("Erro ao listar quest√µes no DAO.");
+			throw new DAOException ("Erro ao listar questıes no DAO.");
 		}
 	}
 
@@ -47,7 +47,7 @@ public class DAOHibernateQuestion implements IDAOQuestion {
 		try {
 			this.session.save(question);
 		} catch (Exception e) {
-			throw new DAOException ("Erro ao salvar quest√£o no DAO.");
+			throw new DAOException ("Erro ao salvar quest„o no DAO.");
 		}
 	}
 
@@ -65,7 +65,7 @@ public class DAOHibernateQuestion implements IDAOQuestion {
 				return true;	
 			}
 		} catch (Exception e) {
-			throw new DAOException("Erro ao procurar quest√£o no DAO.");
+			throw new DAOException("Erro ao procurar quest„o no DAO.");
 		}
 	}
 
@@ -85,7 +85,7 @@ public class DAOHibernateQuestion implements IDAOQuestion {
 
 			return lista;
 		} catch (Exception e) {
-			throw new DAOException ("Erro ao buscar quest√£o por t√≠tulo ou descri√ß√£o no DAO.");
+			throw new DAOException ("Erro ao buscar quest„o por tÌtulo ou descriÁ„o no DAO.");
 		}
 	}
 
@@ -112,7 +112,7 @@ public class DAOHibernateQuestion implements IDAOQuestion {
 					.uniqueResult();
 			return questionInstance;
 		} catch (Exception e) {
-			throw new DAOException ("Erro ao procurar inst√¢ncia de quest√£o no DAO.");
+			throw new DAOException ("Erro ao procurar inst‚ncia de quest„o no DAO.");
 		}
 	}
 	@Override
@@ -120,7 +120,7 @@ public class DAOHibernateQuestion implements IDAOQuestion {
 		try {
 			this.session.delete(q);
 		} catch (Exception e) {
-			throw new DAOException ("Erro ao deletar quest√£o no DAO.");
+			throw new DAOException ("Erro ao deletar quest„o no DAO.");
 		}
 	}
 
@@ -133,7 +133,7 @@ public class DAOHibernateQuestion implements IDAOQuestion {
 					.uniqueResult();
 			return questionInstance;
 		} catch (Exception e) {
-			throw new DAOException ("Erro ao pegar instancia de quest√£o por t√≠tulo no DAO.");
+			throw new DAOException ("Erro ao pegar inst‚ncia de quest„o por tÌtulo no DAO.");
 		}
 	}
 
@@ -148,7 +148,7 @@ public class DAOHibernateQuestion implements IDAOQuestion {
 		try {
 		this.session.update(q);
 		} catch (Exception e) {
-			throw new DAOException ("Erro ao atualizar quest√£o no DAO.");
+			throw new DAOException ("Erro ao atualizar quest„o no DAO.");
 		}
 	}
 	

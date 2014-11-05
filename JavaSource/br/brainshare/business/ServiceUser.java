@@ -35,7 +35,7 @@ public class ServiceUser implements IServiceUser{
 	public void save(User user) throws UserException, DAOException {
 
 		if (user.getUsername() == "") {
-			throw new UserException("Usuario com dados vazios!");
+			throw new UserException("Usuário com dados vazios.");
 		} else {
 			try {
 				this.daoUsuario.save(user);

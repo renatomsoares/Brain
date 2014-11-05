@@ -22,10 +22,10 @@ public class User implements Serializable {
 	@GeneratedValue
 	private Integer id;
 	
-	//@NotNull(message = "Por favor, insira um username.")
+	@NotNull(message = "Por favor, insira um username.")
 	private String username;
 	
-	@NotNull(message = "Por favor, insira um password.")
+	@NotNull(message = "Por favor, insira uma senha.")
 	private String password;
 	
 	@NotNull(message = "Por favor, insira um email.")

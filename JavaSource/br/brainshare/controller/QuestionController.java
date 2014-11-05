@@ -67,7 +67,7 @@ public class QuestionController {
 		try {
 			service.save(quest);
 		} catch (QuestionException e) {
-			FacesMessage msg = new FacesMessage("JÃ¡ existe uma pergunta com esse tÃ­tulo.");
+			FacesMessage msg = new FacesMessage("Já existe uma pergunta com esse título.");
 			FacesContext.getCurrentInstance().addMessage("erro", msg);
 			return null;
 		} catch (EmptyFieldException e) {

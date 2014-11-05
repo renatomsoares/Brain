@@ -27,10 +27,10 @@ public class Question {
 	@GeneratedValue
 	private Integer id;
 	
-	@NotNull(message = "Por favor, insira uma questao.")
+	@NotNull(message = "Por favor, insira uma questão.")
 	private String question;
 	
-	@NotNull(message = "Por favor, insira um titulo.")
+	@NotNull(message = "Por favor, insira um título.")
 	private String title;
 	
 	@NotNull

@@ -44,7 +44,7 @@ public class DAOHibernateUser implements IDAOUser {
 		try {
 			this.session.save(user);
 		} catch (Exception e) {
-			throw new DAOException ("Erro ao salvar usuÃ¡rio no DAO.");
+			throw new DAOException ("Erro ao salvar usuário no DAO.");
 		}
 	}
 
@@ -61,7 +61,7 @@ public class DAOHibernateUser implements IDAOUser {
 				return true;	
 			}
 		} catch (Exception e) {
-			throw new DAOException ("Erro ao procurar usuÃ¡rio no DAO.");
+			throw new DAOException ("Erro ao procurar usuário no DAO.");
 		}
 	}
 
@@ -73,7 +73,7 @@ public class DAOHibernateUser implements IDAOUser {
 		            .uniqueResult();
 			return userInstance;
 		} catch (Exception e) {
-			throw new DAOException ("Erro ao pegar instÃ¢ncia de usuÃ¡rio no DAO.");
+			throw new DAOException ("Erro ao pegar instância de usuário no DAO.");
 		}
 	}
 
@@ -90,7 +90,7 @@ public class DAOHibernateUser implements IDAOUser {
 				return true;	
 			}
 		} catch (Exception e) {
-			throw new DAOException ("Erro ao procurar usuÃ¡rio no DAO.");
+			throw new DAOException ("Erro ao procurar usuário no DAO.");
 		}
 	}
 	

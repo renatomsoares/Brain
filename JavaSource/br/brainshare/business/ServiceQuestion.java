@@ -29,7 +29,7 @@ public class ServiceQuestion implements IServiceQuestion{
 	public ServiceQuestion(){
 		this.daoQuestion = DAOFactory.createQuestionDAO();
 		contextSuggestion = new SuggestionContext(new DAOSuggestionByTitle(daoQuestion.getSession()));
-		contextOrdination = new OrdinationContext(new OrdinationByAnswersNumber(daoQuestion.getSession()));
+		contextOrdination = new OrdinationContext(new OrdinationByTime(daoQuestion.getSession()));
 	}
 	public static ServiceQuestion getInstance(){
 		if(singleton==null){
@@ -62,7 +62,7 @@ public class ServiceQuestion implements IServiceQuestion{
 	public boolean save(Question q) throws EmptyFieldException, QuestionException, DAOException {
 
 		if (daoQuestion.getQuestionInstance(q.getTitle()) != null) {
-			throw new QuestionException ("N√£o pode existir mais de uma quest√£o com o mesmo t√≠tulo.");
+			throw new QuestionException ("N„o pode existir mais de uma quest„o com o mesmo tÌtulo.");
 		} 
 		else {
 			try {
@@ -120,10 +120,10 @@ public class ServiceQuestion implements IServiceQuestion{
 	@Override
 	public void update(Question q) throws QuestionException, DAOException {
 		if (!daoQuestion.findQuestion(q)) {
-			throw new QuestionException ("Quest√£o nao encontrada!");
+			throw new QuestionException ("Quest„o n„o encontrada.");
 		}
 		else if (daoQuestion.getQuestionInstance(q.getTitle()) != null) {
-			throw new QuestionException("Este t√≠tulo j√° existe!");
+			throw new QuestionException("O tÌtulo informado j· existe.");
 		} 
 		else {
 			try {

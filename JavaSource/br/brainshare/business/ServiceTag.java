@@ -48,7 +48,7 @@ public class ServiceTag implements IServiceTag {
 		if(this.daoTag.searchTag(nome)!= null){
 			return this.daoTag.searchTag(nome);
 		}else{
-			throw new TagException("Tag inexistente!");
+			throw new TagException("A tag não existe.");
 		}
 	}
 

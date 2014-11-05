@@ -63,7 +63,7 @@ public class AnswerController implements Serializable {
 			this.service.save(answer);
 			
 		} catch (AnswerException e) {
-			FacesMessage msg = new FacesMessage("Informe uma resposta v√°lida.");
+			FacesMessage msg = new FacesMessage("Informe uma resposta v·lida.");
 			FacesContext.getCurrentInstance().addMessage("erro", msg);
 			return null;
 		} catch (EmptyFieldException e) {

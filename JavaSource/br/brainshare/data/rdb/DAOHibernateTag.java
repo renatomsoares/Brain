@@ -56,7 +56,7 @@ public class DAOHibernateTag implements IDAOTag {
 					.add(Restrictions.eq("name", tag.getName())).uniqueResult();
 			return questionInstance;
 		} catch (Exception e) {
-			throw new DAOException ("Erro ao pegar inst√¢ncia de tag no DAO.");
+			throw new DAOException ("Erro ao pegar inst‚ncia de tag no DAO.");
 		}
 	}
 

@@ -30,7 +30,7 @@ public class ServiceAnswer implements IServiceAnswer {
 	@Override
 	public void save(Answer resp) throws AnswerException, EmptyFieldException, DAOException {
 		if (resp.getAnswer() == "") {
-			throw new EmptyFieldException("A resposta n√£o pode ser vazia.");
+			throw new EmptyFieldException("A resposta n„o pode ser vazia.");
 		}
 		else {
 			try {

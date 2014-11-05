@@ -63,7 +63,7 @@ public class DAOHibernateScore implements IDAOScore {
 					.add(Restrictions.eq("id", score.getId())).uniqueResult();
 			return scoreInstance;
 		} catch (Exception e) {
-			throw new DAOException ("Erro ao pegar inst√¢ncia de score no DAO.");
+			throw new DAOException ("Erro ao pegar inst‚ncia de score no DAO.");
 		}
 	}
 }

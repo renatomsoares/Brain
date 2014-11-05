@@ -23,7 +23,7 @@ public class OrdinationByTime implements IOrdinationStrategy{
 	public List<Question> findQuestions(String title, String desc) throws DAOException{
 
 		try {
-			List<Question> lista = session.createCriteria(Question.class).addOrder(Order.asc("id"))
+			List<Question> lista = session.createCriteria(Question.class).addOrder(Order.desc("id"))
 					.add(Restrictions.or(
 							Restrictions.like("title", "%"+title+"%"),
 							Restrictions.like("question", "%"+desc+"%")

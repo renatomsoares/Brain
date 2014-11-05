@@ -28,7 +28,7 @@ public class Answer {
 	@JoinColumn(name = "id_user", nullable = false)
 	private User user;
 	
-	@NotNull
+	@NotNull (message = "Por favor, informe uma resposta.")
 	private String answer;
 	
 	@Column(name = "score", columnDefinition = "integer default '0'")

@@ -12,7 +12,7 @@
   </interface>  
   <class id="2" language="java" name="br.brainshare.suggestion.DAOSuggestionByTitle" project="Brain2.0" 
     file="/Brain2.0/src/br/brainshare/suggestion/DAOSuggestionByTitle.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="499" y="265"/>    
+    <position height="-1" width="-1" x="501" y="250"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,25 +30,25 @@
   </class>  
   <class id="4" language="java" name="br.brainshare.business.ServiceQuestion" project="Brain2.0" 
     file="/Brain2.0/src/br/brainshare/business/ServiceQuestion.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="188" y="-45"/>    
+    <position height="-1" width="-1" x="193" y="-35"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <realization id="5">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="1"/>  
-  </realization>  
-  <association id="6">    
+  <association id="5">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="7" name="strategy"/>      
-      <multiplicity id="8" minimum="0" maximum="1"/>    
+      <attribute id="6" name="strategy"/>      
+      <multiplicity id="7" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <realization id="8">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
   <association id="9">    
     <end type="SOURCE" refId="4" navigable="false">      
       <attribute id="10" name="singleton"/>      

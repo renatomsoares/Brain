@@ -14,7 +14,7 @@ public class Tag {
 	@GeneratedValue
 	private Integer id;
 	
-	@NotNull
+	@NotNull (message = "Por favor, informe uma tag.")
 	private String name;
 	
 	private Integer qtd;
