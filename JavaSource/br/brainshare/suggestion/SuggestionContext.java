@@ -13,7 +13,7 @@ public class SuggestionContext {
 		this.strategy = strategy;
 	}
 	
-	public List<Question> executeStrategy(String a, String b) throws DAOException {
-		return this.strategy.getSuggestions(a, b);
+	public List<Question> executeStrategy(String a) throws DAOException {
+		return this.strategy.getSuggestions(a);
 	}
 }

@@ -7,10 +7,44 @@ import lib.exceptions.EmptyFieldException;
 import lib.exceptions.QuestionException;
 import br.brainshare.data.IDAOQuestion;
 import br.brainshare.model.Question;
+import br.brainshare.ordinationQuestion.IOrdinationStrategy;
 import br.brainshare.ordinationQuestion.OrdinationByAnswersNumber;
 import br.brainshare.ordinationQuestion.OrdinationByTime;
 import br.brainshare.ordinationQuestion.OrdinationContext;
 import br.brainshare.suggestion.DAOSuggestionByTitle;
+import br.brainshare.suggestion.SuggestionContext;
+import br.brainshare.util.DAOFactory;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+import java.util.Properties;
+
+import org.hibernate.Session;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import lib.exceptions.DAOException;
+import lib.exceptions.EmptyFieldException;
+import lib.exceptions.QuestionException;
+import br.brainshare.data.IDAOQuestion;
+import br.brainshare.model.Question;
+import br.brainshare.suggestion.DAOSuggestionByTitle;
+import br.brainshare.suggestion.IDAOSuggestionStrategy;
 import br.brainshare.suggestion.SuggestionContext;
 import br.brainshare.util.DAOFactory;
 
@@ -26,12 +60,61 @@ public class ServiceQuestion implements IServiceQuestion{
 
 	private OrdinationContext contextOrdination;
 
-	public ServiceQuestion(){
+	public ServiceQuestion() {
 		this.daoQuestion = DAOFactory.createQuestionDAO();
-		contextSuggestion = new SuggestionContext(new DAOSuggestionByTitle(daoQuestion.getSession()));
-		contextOrdination = new OrdinationContext(new OrdinationByTime(daoQuestion.getSession()));
+		try {
+
+			Object objectSuggestion = createClassByProperties("suggestion","br.brainshare.suggestion.DAOSuggestionBy");
+			Object objectOrdination = createClassByProperties("ordination","br.brainshare.ordinationQuestion.OrdinationBy");
+		
+			
+			contextSuggestion = new SuggestionContext((IDAOSuggestionStrategy) objectSuggestion);
+			contextOrdination = new OrdinationContext((IOrdinationStrategy) objectOrdination);
+
+		} 
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+
 	}
-	public static ServiceQuestion getInstance(){
+	
+	public Object createClassByProperties(String criterio ,String classname) throws IOException, ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+		Properties prop = getProp();
+		String config = prop.getProperty(criterio);
+		System.out.println("a sugestao eh por : ----->>"+config);
+		//String classname = "br.brainshare.suggestion.DAOSuggestionBy";
+		classname += config;
+		System.out.println(classname);
+		Class c = Class.forName(classname);
+		Constructor cons = c.getConstructor(Session.class);
+		Object object = cons.newInstance(daoQuestion.getSession());
+		return object;
+	}
+	
+	public static ServiceQuestion getInstance() throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
 		if(singleton==null){
 			singleton = new ServiceQuestion();
 		}
@@ -143,9 +226,17 @@ public class ServiceQuestion implements IServiceQuestion{
 	 */
 
 	@Override
-	public List<Question> findSuggestion(String title, String desc)
+	public List<Question> findSuggestion(String title)
 			throws QuestionException, DAOException {
-		return contextSuggestion.executeStrategy(title, desc);
+		return contextSuggestion.executeStrategy(title);
 	}	
 
+	public static Properties getProp() throws IOException { 
+		Properties props = new Properties(); 
+
+		FileInputStream file = new FileInputStream( "C:/Users/Renato/Documents/Brain2.0/src/properties/config.properties"); 
+		props.load(file);
+
+		return props; 
+	}
 }

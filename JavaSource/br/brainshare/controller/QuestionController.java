@@ -125,12 +125,12 @@ public class QuestionController {
 		return listByTitleOrDesc;
 	}
 	
-	public List<Question> getListSuggestion(String Sugtitle,String SugDesc) {
-		System.out.println("aqui " + Sugtitle + " "+ SugDesc);
+	public List<Question> getListSuggestion(String Sugtitle) {
+		
 		if (listSuggestion == null) {
 			try {
 				listSuggestion = service.findSuggestion(
-						Sugtitle, SugDesc);
+						Sugtitle);
 			} catch (QuestionException e) {
 				e.printStackTrace();
 			} catch (DAOException e) {

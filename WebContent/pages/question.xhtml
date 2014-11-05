@@ -110,7 +110,7 @@
 				<h:outputLabel value="Perguntas relacionadas " />
             			<h:form id="listSuggestions">
             				<h:dataTable id="listagem"
-            					value="#{questionController.getListSuggestion(sessionScope['questaoClicada'].title,sessionScope['questaoClicada'].question)}"
+            					value="#{questionController.getListSuggestion(sessionScope['questaoClicada'].title)}"
             					var="question">
             					<h:column>
             						<section

@@ -7,6 +7,6 @@ import br.brainshare.model.Question;
 
 public interface IDAOSuggestionStrategy {
 	
-	List<Question> getSuggestions(String title, String desc)
+	List<Question> getSuggestions(String title)
 			throws DAOException;
 }

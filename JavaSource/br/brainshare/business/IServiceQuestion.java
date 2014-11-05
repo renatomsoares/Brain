@@ -31,7 +31,7 @@ public interface IServiceQuestion {
 	
 	void countAnswer(Question q) throws DAOException;
 
-	List<Question> findSuggestion(String title, String desc) throws QuestionException, DAOException;
+	List<Question> findSuggestion(String title) throws QuestionException, DAOException;
 
 	List<Question> findQuestions(String title, String desc) throws QuestionException, DAOException;
 }

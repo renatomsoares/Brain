@@ -13,11 +13,11 @@ import org.hibernate.criterion.Restrictions;
 import lib.exceptions.DAOException;
 import br.brainshare.model.Question;
 
-public class DAOSuggestionByTitle implements IDAOSuggestionStrategy{
+public class DAOSuggestionByDescription implements IDAOSuggestionStrategy{
 
 	private Session session;
 	
-	public DAOSuggestionByTitle(Session session) {
+	public DAOSuggestionByDescription(Session session) {
 		this.session = session;
 	}
 
@@ -39,9 +39,11 @@ public class DAOSuggestionByTitle implements IDAOSuggestionStrategy{
 		try {
 			Criteria lista = session.createCriteria(Question.class);
 			List<Question> lista_=new ArrayList<Question>();
-			String[] title_ = title.split(" ");
-			for(int i=0; i < title_.length; i++) {
-				lista.add(Restrictions.ilike("title", title_[i] , MatchMode.ANYWHERE)
+			Question q = getQuestionInstance(title);
+			
+			String[] desc_ = q.getQuestion().split(" ");
+			for(int i=0; i < desc_.length; i++) {
+				lista.add(Restrictions.ilike("question", desc_[i] , MatchMode.ANYWHERE)
 						).list();
 
 				lista_.addAll(lista.list());
