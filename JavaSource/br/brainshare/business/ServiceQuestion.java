@@ -67,7 +67,6 @@ public class ServiceQuestion implements IServiceQuestion{
 			Object objectSuggestion = createClassByProperties("suggestion","br.brainshare.suggestion.DAOSuggestionBy");
 			Object objectOrdination = createClassByProperties("ordination","br.brainshare.ordinationQuestion.OrdinationBy");
 		
-			
 			contextSuggestion = new SuggestionContext((IDAOSuggestionStrategy) objectSuggestion);
 			contextOrdination = new OrdinationContext((IOrdinationStrategy) objectOrdination);
 
@@ -105,7 +104,6 @@ public class ServiceQuestion implements IServiceQuestion{
 		Properties prop = getProp();
 		String config = prop.getProperty(criterio);
 		System.out.println("a sugestao eh por : ----->>"+config);
-		//String classname = "br.brainshare.suggestion.DAOSuggestionBy";
 		classname += config;
 		System.out.println(classname);
 		Class c = Class.forName(classname);

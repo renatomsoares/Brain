@@ -46,7 +46,6 @@ public class DAOSuggestionByTitle implements IDAOSuggestionStrategy{
 
 				lista_.addAll(lista.list());
 
-
 			}
 
 			Set set = new HashSet(lista_);

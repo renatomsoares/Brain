@@ -30,7 +30,7 @@
                     <h:dataTable id="listagem" value="#{questionController.listByTitleOrDesc}" var="question" >
                         <h:column>
                             <section class="stacked-box question">
-                                <h:commandLink action="#{question.show}"> <span class="title">#{question.title}</span></h:commandLink>
+                                <h:commandLink action="#{question.show}" id = "topico#{question.id}"> <span class="title">#{question.title}</span></h:commandLink>
                             
                                 <span class="author">por <a href="#">#{question.user.username}</a> às #{question.dateRegister}</span>
                             
